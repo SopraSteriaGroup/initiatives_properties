@@ -1,0 +1,8 @@
+server:
+  port: ${port:6161}
+spring:
+  datasource:
+    initialize: false
+turbine:
+  stream:
+    port: ${turbine.port:8989}

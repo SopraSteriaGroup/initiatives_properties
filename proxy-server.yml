@@ -1,0 +1,20 @@
+server:
+  port: ${port:9080}
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 2000
+zuul:
+  host:
+    connect-timeout-millis: 2000
+    socket-timeout-millis: 2000
+  ssl-hostname-validation-enabled: false
+  ignoredServices: '*'
+  routes:
+    auth-service:
+      path: /auth-service/**
+      sensitiveHeaders:

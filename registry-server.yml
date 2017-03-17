@@ -1,0 +1,31 @@
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    stream:
+      kafka:
+        binder:
+          zkNodes: kafka
+          brokers: kafka
+          headers:
+            - X-B3-TraceId
+            - X-B3-SpanId
+            - X-B3-Sampled
+            - X-B3-ParentSpanId
+            - X-Span-Name
+            - X-Process-Id
+eureka:
+  instance:
+    hostname: ${spring.application.name}
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://registry-server:8761/eureka/
