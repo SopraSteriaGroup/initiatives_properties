@@ -11,15 +11,15 @@ spring:
 security:
   oauth2:
     client:
-      client-id: authclientid
-      client-secret: authsecret
+      client-id: initiatives_app
+      client-secret: initiatives_super_secure_secret
   basic:
     enabled: false
 auth:
   cert:
-    filePath: classpath:authcert.jks
+    filePath: classpath:initiatives_cert.jks
     password: sopra*
-    certAlias: authcert
+    certAlias: initiatives
   token:
     accessValiditySeconds: 1800
     refreshValidityMinutes: 180
