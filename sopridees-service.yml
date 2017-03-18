@@ -1,0 +1,22 @@
+server:
+  port: ${port:8280}
+spring:
+  jackson:
+    serialization:
+      write_dates_as_timestamps: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ssg-initiatives
+    username: postgres
+    password: password
+    driverClassName: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+api:
+  docs:
+    title: SoprIdees service REST API
+    description: Documentation de l'API REST exposée par le service de gestion des SoprIdées
+    version: 1.0.0
+    termsOfServiceUrl: https://www.soprasteria.com
+    license: © 2017 SopraSteria Group
+    licenseUrl: https://www.soprasteria.com

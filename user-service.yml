@@ -1,0 +1,14 @@
+server:
+  port: ${port:8380}
+spring:
+  jackson:
+    serialization:
+      write_dates_as_timestamps: false
+api:
+  docs:
+    title: User service REST API
+    description: Documentation de l'API REST exposée par le service de gestion des utilisateurs
+    version: 1.0.0
+    termsOfServiceUrl: https://www.soprasteria.com
+    license: © 2017 SopraSteria Group
+    licenseUrl: https://www.soprasteria.com
