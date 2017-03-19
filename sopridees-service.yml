@@ -2,11 +2,10 @@ server:
   port: ${port:8280}
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/ssg-initiatives
-    username: postgres
-    password: password
-    driverClassName: org.postgresql.Driver
+    url: jdbc:h2:mem:sopridees;DB_CLOSE_DELAY=-1
+    username: sopridees
   jpa:
+    show-sql: true
     hibernate:
       ddl-auto: create
 api:
