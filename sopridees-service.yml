@@ -1,6 +1,8 @@
 server:
   port: ${port:8280}
 spring:
+  mail:
+    host: someHost
   datasource:
     url: jdbc:h2:mem:sopridees;DB_CLOSE_DELAY=-1
     username: sopridees
