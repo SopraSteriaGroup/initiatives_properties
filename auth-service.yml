@@ -23,6 +23,18 @@ auth:
   token:
     accessValiditySeconds: 1800
     refreshValidityMinutes: 180
+  sso:
+    providers:
+      linkedin:
+        profileUrl: https://api.linkedin.com/v1/people/~?format=json
+        id: id
+        firstname: firstName
+        lastname: lastName
+      google:
+        profileUrl: https://www.googleapis.com/userinfo/v2/me
+        id: id
+        firstname: given_name
+        lastname: family_name
 api:
   title: AuthService REST API
   description: OAuth2 authentication service mocking API Gateway
@@ -30,3 +42,4 @@ api:
   termsOfServiceUrl: https://github.com/SopraSteriaGroup/initiatives_backend
   license: MIT
   licenseUrl: https://tldrlegal.com/license/mit-license
+
