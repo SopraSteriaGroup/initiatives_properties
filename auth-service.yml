@@ -28,13 +28,18 @@ auth:
       linkedin:
         profileUrl: https://api.linkedin.com/v1/people/~?format=json
         id: id
-        firstname: firstName
-        lastname: lastName
+        firstName: firstName
+        lastName: lastName
       google:
         profileUrl: https://www.googleapis.com/userinfo/v2/me
         id: id
-        firstname: given_name
-        lastname: family_name
+        firstName: given_name
+        lastName: family_name
+      fakesso:
+        profileUrl: http://127.0.0.1:9080/auth-service/fakesso/me
+        id: id
+        firstName: firstName
+        lastName: lastName
 api:
   title: AuthService REST API
   description: OAuth2 authentication service mocking API Gateway
