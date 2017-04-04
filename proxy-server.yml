@@ -21,3 +21,7 @@ zuul:
     sopridees-service:
       path: /sopridees-service/**
       sensitiveHeaders:
+    user-service:
+      path: /user-service/**
+      sensitiveHeaders:
+

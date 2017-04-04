@@ -1,9 +1,16 @@
 server:
   port: ${port:8380}
 spring:
-  jackson:
-    serialization:
-      write_dates_as_timestamps: false
+  mail: 
+    host: 127.0.0.1
+    port: 1025
+  datasource:
+    url: jdbc:h2:mem:userdb;DB_CLOSE_DELAY=-1
+    username: sopridees
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
 api:
   docs:
     title: User service REST API
@@ -12,3 +19,17 @@ api:
     termsOfServiceUrl: https://www.soprasteria.com
     license: © 2017 SopraSteria Group
     licenseUrl: https://www.soprasteria.com
+security:
+  basic:
+    enabled: false
+  oauth2:
+    client:
+      client-id: initiatives_app
+      client-secret: initiatives_super_secure_secret
+    resource:
+      jwt:
+        keyValue: |
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA04oHvREfP2YxamN5CcwasVsJe1N0Kg5THUaziTLEBESU9zXT2OiMQEtPCOmgS8ophZd/eYUK8CIaYVnGafZdE0snKalpPPKeAlp5bKuwgTRQl6galArMm53I7sjgZjcDRu8MGX1/OW9yZJRapBXdyFCnQlEJrZJLIuesqNmpV8NsUDs0gHYu4GuuWNwB+jRrOagoSNHgSZqpi2dJBmZjCNvycqNAwy2qRRl16Pb5MxeuBV+6O5ObwqrxcFFTa0waBHz3wmPbDc75JrN3KQXT3Flj7FBbZdIOX4gornPgJ+phw/aQcYVEdqbmzpCibkf9y66QFIQgN4jaNeTyonVwvwIDAQAB
+          -----END PUBLIC KEY-----
+
