@@ -36,7 +36,7 @@ auth:
         firstName: given_name
         lastName: family_name
       fakesso:
-        profileUrl: https://localhost:9080/auth-service/fakesso/me
+        profileUrl: http://localhost:${server.port}/fakesso/me
         id: id
         firstName: firstName
         lastName: lastName
