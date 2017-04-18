@@ -1,15 +1,17 @@
 auth:
   gateway:
-    url: ${auth.gateway.uri:http://localhost:9080/auth-service}
+    url: ${auth.gateway.uri:https://localhost:9080/auth-service}
 eureka:
   instance:
     hostname: localhost
   client:
+    trust-store: classpath:truststore.jks
+    trust-store-password: changeit
     registerWithEureka: true
     fetchRegistry: true
     waitTimeInMsWhenSyncEmpty: 0
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: https://localhost:8761/eureka/
 spring:
   jackson:
     serialization:
