@@ -1,10 +1,5 @@
 server:
   port: ${port:9080}
-  ssl:
-    enabled: true
-    key-store: classpath:keystore.jks
-    key-store-password: changeit
-    key-password: password
 hystrix:
   command:
     default:
@@ -13,19 +8,6 @@ hystrix:
           strategy: THREAD
           thread:
             timeoutInMilliseconds: 2000
-eureka:
-  instance:
-    securePortEnabled: true
-    nonSecurePortEnabled: false
-    secureVirtualHostName: ${spring.application.name}
-    homePageUrl: https://${eureka.instance.hostname}:${server.port}/
-    statusPageUrl: https://${eureka.instance.hostname}:${server.port}/info
-    metadataMap:
-      hostname : ${eureka.instance.hostname}
-      securePort: ${server.port}
-
-
-
 zuul:
   host:
     connect-timeout-millis: 2000
